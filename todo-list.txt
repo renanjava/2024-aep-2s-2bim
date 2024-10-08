@@ -12,8 +12,9 @@
 [X] - Configurar o ambiente Nestjs
 [X] - Definir a estrutura do projeto back-end e front-end
 [x] - Repositório GitHub
-[] - Branches de Development
-[] - Criar imagens e containers Docker
+[x] - Branches de Development
+[x] - Criar imagens e containers Docker
+[] - Branches de Feature
 [] - Separar os requisitos funcionais
     [] - CRUD usuário (Versionando a API)
     [] - Identificar ataque de phishing
@@ -22,7 +23,6 @@
     [] - Identificar ataque de rainbow table 
     [] - Criar a interface do usuário (UI) do aplicativo
     [] - Notificação pro usuário com base no user que o atacante tá tentando
-[] - Branches de Feature
 [] - Swagger
 [] - Implementar a lógica de detecção de ameaças
 [] - Terminar o backend Nestjs
