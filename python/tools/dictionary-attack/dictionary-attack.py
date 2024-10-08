@@ -1,5 +1,6 @@
 
 #Créditos: rahulsinghinfosec
+# python brute-force.py -w wordlist.txt -u https://www.github.com
 
 #!/bin/python3 
 import requests
