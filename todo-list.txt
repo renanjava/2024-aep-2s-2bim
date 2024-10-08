@@ -10,7 +10,7 @@
 [] - Elaborar a documentação de manutenção (corretiva, adaptativa, perfectiva, preditiva)
 [X] - Configurar o ambiente Flutter
 [X] - Configurar o ambiente Nestjs
-[] - Definir a estrutura do projeto back-end e front-end
+[X] - Definir a estrutura do projeto back-end e front-end
 [x] - Repositório GitHub
 [] - Branches de Development
 [] - Criar imagens e containers Docker
