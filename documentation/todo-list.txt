@@ -8,23 +8,9 @@
 [X] - Elaborar um plano formal para o app Flutter
 [X] - Elaborar um plano formal para a IA
 [] - Elaborar a documentação de manutenção (corretiva, adaptativa, perfectiva, preditiva)
-[] - Configurar o ambiente de desenvolvimento com Flutter
-[] - Definir a estrutura do projeto
-    my_flutter_app/
-    ├── core/
-    │   ├── entities/
-    │   ├── services/
-    │   └── usecases/
-    ├── adapters/
-    │   ├── repositories/
-    │   ├── api/
-    │   └── ui/
-    ├── docker/
-    │   ├── Dockerfile
-    │   └── docker-compose.yml
-    ├── test/
-    ├── pubspec.yaml
-    └── main.dart
+[] - Configurar o ambiente Flutter
+[] - Configurar o ambiente Nestjs
+[] - Definir a estrutura do projeto back-end e front-end
 [x] - Repositório GitHub
 [] - Branches de Development
 [] - Criar imagens e containers Docker
@@ -39,10 +25,11 @@
 [] - Branches de Feature
 [] - Swagger
 [] - Implementar a lógica de detecção de ameaças
+[] - Terminar o backend Nestjs
 [] - Terminar o app Flutter
 [] - Terminar a implementação da IA
-[] - Entender como integrar a IA no flutter
-[] - Integrar a IA no flutter
+[] - Entender como integrar a IA
+[] - Integrar a IA
 [] - Planejar testes
 [] - Executar testes
 [] - Refatoração
