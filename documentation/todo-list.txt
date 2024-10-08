@@ -1,0 +1,48 @@
+[X] - Entender machine learning com Python
+[X] - Entender ataques de phishing
+[X] - Estudar técnicas de aprendizado de máquina aplicáveis à cibersegurança
+[X] - Hack tools
+[] - Cursos Alura
+[] - Analisar aplicativos similares no mercado
+[X] - Elaborar um plano formal de gerenciamento de configuração
+[X] - Elaborar um plano formal para o app Flutter
+[X] - Elaborar um plano formal para a IA
+[] - Elaborar a documentação de manutenção (corretiva, adaptativa, perfectiva, preditiva)
+[] - Configurar o ambiente de desenvolvimento com Flutter
+[] - Definir a estrutura do projeto
+    my_flutter_app/
+    ├── core/
+    │   ├── entities/
+    │   ├── services/
+    │   └── usecases/
+    ├── adapters/
+    │   ├── repositories/
+    │   ├── api/
+    │   └── ui/
+    ├── docker/
+    │   ├── Dockerfile
+    │   └── docker-compose.yml
+    ├── test/
+    ├── pubspec.yaml
+    └── main.dart
+[x] - Repositório GitHub
+[] - Branches de Development
+[] - Criar imagens e containers Docker
+[] - Separar os requisitos funcionais
+    [] - CRUD usuário (Versionando a API)
+    [] - Identificar ataque de phishing
+    [] - Identificar ataque a força bruta
+    [] - Identificar ataque de dicionário
+    [] - Identificar ataque de rainbow table 
+    [] - Criar a interface do usuário (UI) do aplicativo
+    [] - Notificação pro usuário com base no user que o atacante tá tentando
+[] - Branches de Feature
+[] - Swagger
+[] - Implementar a lógica de detecção de ameaças
+[] - Terminar o app Flutter
+[] - Terminar a implementação da IA
+[] - Entender como integrar a IA no flutter
+[] - Integrar a IA no flutter
+[] - Planejar testes
+[] - Executar testes
+[] - Refatoração
