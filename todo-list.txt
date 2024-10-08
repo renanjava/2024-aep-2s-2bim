@@ -1,6 +1,6 @@
-[] - Entender machine learning com Python
-[] - Entender ataques de phishing
-[] - Estudar técnicas de aprendizado de máquina aplicáveis à cibersegurança
+[X] - Entender machine learning com Python
+[X] - Entender ataques de phishing
+[X] - Estudar técnicas de aprendizado de máquina aplicáveis à cibersegurança
 [] - Cursos Alura
 [] - Analisar aplicativos similares no mercado
 [] - Elaborar um plano formal de gerenciamento de configuração
@@ -29,6 +29,7 @@
 [] - Criar imagens e containers Docker
 [] - Separar os requisitos funcionais
     [] - CRUD usuário (Versionando a API)
+    [] - Identificar ataque de phishing
     [] - Identificar ataque a força bruta
     [] - Identificar ataque de dicionário
     [] - Identificar ataque de rainbow table 
