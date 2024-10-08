@@ -8,8 +8,8 @@
 [X] - Elaborar um plano formal para o app Flutter
 [X] - Elaborar um plano formal para a IA
 [] - Elaborar a documentação de manutenção (corretiva, adaptativa, perfectiva, preditiva)
-[] - Configurar o ambiente Flutter
-[] - Configurar o ambiente Nestjs
+[X] - Configurar o ambiente Flutter
+[X] - Configurar o ambiente Nestjs
 [] - Definir a estrutura do projeto back-end e front-end
 [x] - Repositório GitHub
 [] - Branches de Development
