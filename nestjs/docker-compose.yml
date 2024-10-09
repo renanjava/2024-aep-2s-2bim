@@ -1,20 +1,32 @@
-version: "3.9"
+version: '3.9'
 services:
-  mongodb:
-    image: mongo:4.4.6
-    container_name: meu-mongo
+  mongo:
+    image: mongo:latest
+    container_name: meu-mongodb
     networks:
       - minha-bridge
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo_data:/data/db
 
   app-node-aep:
-    image: renancesu/app-node-aep:0.2
+    build: .
     container_name: meu-container
     networks:
       - minha-bridge
     ports:
-      - 3000:3000
+      - '3000:3000'
     depends_on:
-      - mongodb
+      - mongo
+    environment:
+      MONGO_URI: mongodb://mongo:27017/2024-aep-2sem-2bim
+    volumes:
+      - .:/app-node-aep
+    command: npm run start:dev
+
+volumes:
+  mongo_data:
 
 networks:
   minha-bridge:
