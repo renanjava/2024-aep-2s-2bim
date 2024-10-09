@@ -15,14 +15,7 @@
 [x] - Branches de Development
 [x] - Criar imagens e containers Docker
 [] - Branches de Feature
-[] - Separar os requisitos funcionais
-    [] - CRUD usuário (Versionando a API)
-    [] - Identificar ataque de phishing
-    [] - Identificar ataque a força bruta
-    [] - Identificar ataque de dicionário
-    [] - Identificar ataque de rainbow table 
-    [] - Criar a interface do usuário (UI) do aplicativo
-    [] - Notificação pro usuário com base no user que o atacante tá tentando
+[] - CRUD usuário (Versionando a API)
 [] - Swagger
 [] - Implementar a lógica de detecção de ameaças
 [] - Terminar o backend Nestjs
@@ -33,3 +26,11 @@
 [] - Planejar testes
 [] - Executar testes
 [] - Refatoração
+
+[] - Separar os requisitos funcionais
+    [] - Identificar ataque de phishing
+    [] - Identificar ataque a força bruta
+    [] - Identificar ataque de dicionário
+    [] - Identificar ataque de rainbow table 
+    [] - Criar a interface do usuário (UI) do aplicativo
+    [] - Notificação pro usuário com base no user que o atacante tá tentando

@@ -7,7 +7,7 @@ services:
       - minha-bridge
 
   app-node-aep:
-    image: renancesu/app-node-aep:0.1
+    image: renancesu/app-node-aep:0.2
     container_name: meu-container
     networks:
       - minha-bridge
