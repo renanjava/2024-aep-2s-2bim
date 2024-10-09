@@ -6,8 +6,7 @@ import { User } from './entities/user.entity';
 
 @Injectable()
 export class UserService {
-
-  constructor(protected readonly userRepository: UserRepository) { }
+  constructor(protected readonly userRepository: UserRepository) {}
 
   async create(createUserDto: CreateUserDto) {
     await this.userRepository.create(createUserDto as User);
