@@ -14,9 +14,9 @@
 [x] - Repositório GitHub
 [x] - Branches de Development
 [x] - Criar imagens e containers Docker
-[] - Branches de Feature
+[x] - Branches de Feature
 [] - CRUD usuário (Versionando a API)
-[] - Swagger
+[x] - Swagger
 [] - Implementar a lógica de detecção de ameaças
 [] - Terminar o backend Nestjs
 [] - Terminar o app Flutter
