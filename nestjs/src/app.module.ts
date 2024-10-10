@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { UserModule } from './app/application/users/user/user.module';
+import { UserModule } from './app/application/users/modules/user.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 

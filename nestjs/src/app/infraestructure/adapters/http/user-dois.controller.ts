@@ -7,11 +7,11 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
-import { UserService } from './user.service';
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
+import { UserService } from 'src/app/application/users/services/user.service';
+import { CreateUserDto } from 'src/app/interfaces/dto/create-user.dto';
+import { UpdateUserDto } from 'src/app/interfaces/dto/update-user.dto';
 
-@Controller({ path: 'users', version: '2' })
+@Controller({ path: 'users', version: '1' })
 export class UserControllerDois {
   constructor(private readonly userService: UserService) {}
 
