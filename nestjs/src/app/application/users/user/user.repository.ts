@@ -30,4 +30,8 @@ export class UserRepository {
   public async deleteById(id: string) {
     return await this.userModel.deleteOne({ _id: id });
   }
+
+  public async findByUsername(username: string): Promise<User | null> {
+    return this.userModel.findOne({ username: username }).exec();
+  }
 }
