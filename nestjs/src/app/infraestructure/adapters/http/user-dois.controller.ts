@@ -1,3 +1,4 @@
+import { CacheInterceptor } from '@nestjs/cache-manager';
 import {
   Controller,
   Get,
@@ -6,6 +7,7 @@ import {
   Patch,
   Param,
   Delete,
+  UseInterceptors,
 } from '@nestjs/common';
 import { UserService } from 'src/app/application/users/services/user.service';
 import { CreateUserDto } from 'src/app/interfaces/dto/create-user.dto';
@@ -21,11 +23,13 @@ export class UserControllerDois {
   }
 
   @Get()
+  @UseInterceptors(CacheInterceptor)
   async findAll() {
     return await this.userService.findAll();
   }
 
   @Get(':id')
+  @UseInterceptors(CacheInterceptor)
   async findOne(@Param('id') id: string) {
     return await this.userService.findOne(id);
   }
