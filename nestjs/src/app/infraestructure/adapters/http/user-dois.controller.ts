@@ -11,7 +11,7 @@ import { UserService } from 'src/app/application/users/services/user.service';
 import { CreateUserDto } from 'src/app/interfaces/dto/create-user.dto';
 import { UpdateUserDto } from 'src/app/interfaces/dto/update-user.dto';
 
-@Controller({ path: 'users', version: '1' })
+@Controller({ path: 'users', version: '2' })
 export class UserControllerDois {
   constructor(private readonly userService: UserService) {}
 
