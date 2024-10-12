@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { User } from './user.entity';
 import { Model } from 'mongoose';
@@ -29,5 +29,13 @@ export class UserRepository {
 
   public async deleteById(id: string) {
     return await this.userModel.deleteOne({ _id: id });
+  }
+
+  public async findOneByEmail(email: string): Promise<User | null> {
+    const user = await this.userModel.findOne({ email }).exec();
+    if (!user) {
+      throw new NotFoundException(`Usuário com o email ${email} não encontrado`);
+    }
+    return user;
   }
 }
