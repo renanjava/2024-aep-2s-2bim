@@ -4,7 +4,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { CacheModule } from '@nestjs/cache-manager';
 import { redisStore } from 'cache-manager-redis-yet';
-import { AuthModule } from './common/guards/auth/auth.module';
+import { AuthModule } from './common/auth/auth.module';
 
 @Module({
   imports: [
