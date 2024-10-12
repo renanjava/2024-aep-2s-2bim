@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty } from "class-validator";
+import { IsEmail, IsNotEmpty, IsOptional } from "class-validator";
 
 export class LoginAuthDto {
   @IsEmail(undefined, { message: 'O e-mail informado é inválido' })
