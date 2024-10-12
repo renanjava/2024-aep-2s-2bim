@@ -2,7 +2,7 @@
 [X] - Entender ataques de phishing
 [X] - Estudar técnicas de aprendizado de máquina aplicáveis à cibersegurança
 [X] - Hack tools
-[] - Cursos Alura
+[x] - Cursos Alura
 [] - Analisar aplicativos similares no mercado
 [X] - Elaborar um plano formal de gerenciamento de configuração
 [X] - Elaborar um plano formal para o app Flutter
@@ -15,8 +15,9 @@
 [x] - Branches de Development
 [x] - Criar imagens e containers Docker
 [x] - Branches de Feature
-[] - CRUD usuário (Versionando a API)
+[x] - CRUD usuário (Versionando a API)
 [x] - Swagger
+[] - Regex no decorator Matches no atributo password user DTO
 [] - Implementar a lógica de detecção de ameaças
 [] - Terminar o backend Nestjs
 [] - Terminar o app Flutter
