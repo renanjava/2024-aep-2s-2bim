@@ -19,14 +19,28 @@ services:
       - '3000:3000'
     depends_on:
       - mongo
+      - redis
     environment:
       MONGO_URI: mongodb://mongo:27017/2024-aep-2sem-2bim
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
     volumes:
       - .:/app-node-aep
-    command: npm run start:dev
+    command: npm run start
+  
+  redis:
+    container_name: redis-cache
+    image: redis:7.0-alpine
+    networks:
+      - minha-bridge
+    ports: 
+      - '6379:6379'
+    volumes:
+      - redis:/data
 
 volumes:
   mongo_data:
+  redis:
 
 networks:
   minha-bridge:
