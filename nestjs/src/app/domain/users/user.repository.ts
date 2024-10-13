@@ -15,11 +15,11 @@ export class UserRepository {
   }
 
   public async findAll(): Promise<User[]> {
-    return this.userModel.find().select(['-password', '-email']);
+    return this.userModel.find().select(['-password']);
   }
 
   public async findById(id: string): Promise<User | null> {
-    return this.userModel.findById(id).select(['-password', '-email']);
+    return this.userModel.findById(id).select(['-password']);
   }
 
   public async updateById(id: string, updateUserDto: UpdateUserDto) {
@@ -31,10 +31,12 @@ export class UserRepository {
     return await this.userModel.deleteOne({ _id: id });
   }
 
-  public async findOneByEmail(email: string): Promise<UserDocument>{
+  public async findOneByEmail(email: string): Promise<UserDocument> {
     const user = await this.userModel.findOne({ email }).exec();
     if (!user) {
-      throw new NotFoundException(`Usuário com o email ${email} não encontrado`);
+      throw new NotFoundException(
+        `Usuário com o email ${email} não encontrado`,
+      );
     }
     return user;
   }
