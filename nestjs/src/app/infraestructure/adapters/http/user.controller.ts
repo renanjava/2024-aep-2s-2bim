@@ -16,12 +16,11 @@ import { UpdateUserDto } from 'src/app/interfaces/dto/update-user.dto';
 import { AuthGuard } from 'src/common/auth/guards/auth.guard';
 import { HashPasswordPipe } from 'src/common/pipes/hash-password.pipe';
 
-@UseGuards(AuthGuard)
 @Controller({ path: 'users', version: '1' })
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Post()
+  @Post('register')
   async create(
     @Body() { password, ...createUserDto }: CreateUserDto,
     @Body('password', HashPasswordPipe) hashedPassword: string,
@@ -33,23 +32,27 @@ export class UserController {
   }
 
   @Get()
+  @UseGuards(AuthGuard)
   @UseInterceptors(CacheInterceptor)
   async findAll() {
     return await this.userService.findAll();
   }
 
   @Get(':id')
+  @UseGuards(AuthGuard)
   @UseInterceptors(CacheInterceptor)
   async findOne(@Param('id') id: string) {
     return await this.userService.findOne(id);
   }
 
   @Patch(':id')
+  @UseGuards(AuthGuard)
   async update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return await this.userService.update(id, updateUserDto);
   }
 
   @Delete(':id')
+  @UseGuards(AuthGuard)
   async remove(@Param('id') id: string) {
     return await this.userService.remove(id);
   }
