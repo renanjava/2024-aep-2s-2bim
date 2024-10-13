@@ -4,6 +4,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { CacheModule } from '@nestjs/cache-manager';
 import { redisStore } from 'cache-manager-redis-yet';
+import { AuthModule } from './common/auth/auth.module';
 
 @Module({
   imports: [
@@ -11,6 +12,7 @@ import { redisStore } from 'cache-manager-redis-yet';
       process.env.MONGO_URI || 'mongodb://0.0.0.0:27017/aep-teste2',
     ),
     UserModule,
+    AuthModule,
     ConfigModule.forRoot({ isGlobal: true }),
     CacheModule.registerAsync({
       useFactory: async () => {
