@@ -9,10 +9,12 @@ import {
   Delete,
   UseInterceptors,
   UseGuards,
+  Req,
 } from '@nestjs/common';
 import { UserService } from 'src/app/application/users/services/user.service';
 import { CreateUserDto } from 'src/app/interfaces/dto/create-user.dto';
 import { UpdateUserDto } from 'src/app/interfaces/dto/update-user.dto';
+import { IUserRequest } from 'src/app/interfaces/jwt-payload/user-request.interface';
 import { AuthGuard } from 'src/common/auth/guards/auth.guard';
 import { HashPasswordPipe } from 'src/common/pipes/hash-password.pipe';
 
@@ -34,26 +36,22 @@ export class UserControllerDois {
   @Get()
   @UseGuards(AuthGuard)
   @UseInterceptors(CacheInterceptor)
-  async findAll() {
-    return await this.userService.findAll();
+  async findOne(@Req() request: IUserRequest) {
+    return await this.userService.findOne(request.user.sub);
   }
 
-  @Get(':id')
+  @Patch()
   @UseGuards(AuthGuard)
-  @UseInterceptors(CacheInterceptor)
-  async findOne(@Param('id') id: string) {
-    return await this.userService.findOne(id);
+  async update(
+    @Req() request: IUserRequest,
+    @Body() updateUserDto: UpdateUserDto,
+  ) {
+    return await this.userService.update(request.user.sub, updateUserDto);
   }
 
-  @Patch(':id')
+  @Delete()
   @UseGuards(AuthGuard)
-  async update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    return await this.userService.update(id, updateUserDto);
-  }
-
-  @Delete(':id')
-  @UseGuards(AuthGuard)
-  async remove(@Param('id') id: string) {
-    return await this.userService.remove(id);
+  async remove(@Req() request: IUserRequest) {
+    return await this.userService.remove(request.user.sub);
   }
 }
