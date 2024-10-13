@@ -12,23 +12,25 @@ export class AuthService {
     private userService: UserService,
     private jwtService: JwtService,
     private configService: ConfigService,
-  ){}
+  ) {}
   async login(loginAuthDto: LoginAuthDto) {
     const user = await this.userService.findOneByEmail(loginAuthDto.email);
     const userAutenticado = await Password.verify(
-      loginAuthDto.password, 
-      user.password
-    )
+      loginAuthDto.password,
+      user.password,
+    );
 
-    if(!userAutenticado)
+    if (!userAutenticado)
       throw new UnauthorizedException('Email ou senha incorretos');
 
     const payload: IUserPayload = {
       sub: user.id,
       username: user.username,
-    }
+    };
     return {
-      token_acess: await this.jwtService.signAsync(payload, { secret: this.configService.get<string>('JWT_SECRET')}),
-    }
+      token_acess: await this.jwtService.signAsync(payload, {
+        secret: this.configService.get<string>('JWT_SECRET'),
+      }),
+    };
   }
 }

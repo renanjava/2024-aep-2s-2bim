@@ -1,4 +1,4 @@
 export interface IUserPayload {
-    sub: string,
-    username: string,
+  sub: string;
+  username: string;
 }
