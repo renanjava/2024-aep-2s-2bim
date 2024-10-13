@@ -8,18 +8,28 @@ import {
   Param,
   Delete,
   UseInterceptors,
+  UseGuards,
 } from '@nestjs/common';
 import { UserService } from 'src/app/application/users/services/user.service';
 import { CreateUserDto } from 'src/app/interfaces/dto/create-user.dto';
 import { UpdateUserDto } from 'src/app/interfaces/dto/update-user.dto';
+import { AuthGuard } from 'src/common/auth/guards/auth.guard';
+import { HashPasswordPipe } from 'src/common/pipes/hash-password.pipe';
 
+@UseGuards(AuthGuard)
 @Controller({ path: 'users', version: '2' })
 export class UserControllerDois {
   constructor(private readonly userService: UserService) {}
 
   @Post()
-  async create(@Body() createUserDto: CreateUserDto) {
-    return await this.userService.create(createUserDto);
+  async create(
+    @Body() { password, ...createUserDto }: CreateUserDto,
+    @Body('password', HashPasswordPipe) hashedPassword: string,
+  ) {
+    return await this.userService.create({
+      ...createUserDto,
+      password: hashedPassword,
+    } as CreateUserDto);
   }
 
   @Get()

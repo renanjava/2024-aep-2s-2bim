@@ -18,6 +18,7 @@
 [x] - CRUD usuário (Versionando a API)
 [x] - Swagger
 [] - Regex no decorator Matches no atributo password user DTO
+[] - Utils para a ConfigService
 [] - Implementar a lógica de detecção de ameaças
 [] - Terminar o backend Nestjs
 [] - Terminar o app Flutter

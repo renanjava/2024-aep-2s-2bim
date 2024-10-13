@@ -8,12 +8,15 @@ import {
   Param,
   Delete,
   UseInterceptors,
+  UseGuards,
 } from '@nestjs/common';
 import { UserService } from 'src/app/application/users/services/user.service';
 import { CreateUserDto } from 'src/app/interfaces/dto/create-user.dto';
 import { UpdateUserDto } from 'src/app/interfaces/dto/update-user.dto';
+import { AuthGuard } from 'src/common/auth/guards/auth.guard';
 import { HashPasswordPipe } from 'src/common/pipes/hash-password.pipe';
 
+@UseGuards(AuthGuard)
 @Controller({ path: 'users', version: '1' })
 export class UserController {
   constructor(private readonly userService: UserService) {}
