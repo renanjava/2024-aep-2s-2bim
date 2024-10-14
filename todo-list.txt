@@ -20,8 +20,8 @@
 [] - Regex no decorator Matches no atributo password user DTO
 [] - Utils para a ConfigService
 [] - Utils para o JwtService
-[] - Filter
-[] - Logging
+[x] - Filter
+[x] - Logging
 [] - Implementar a lógica de detecção de ameaças
 [] - Terminar o backend Nestjs
 [] - Terminar o app Flutter
