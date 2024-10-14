@@ -12,10 +12,10 @@ import {
   Req,
   UseFilters,
 } from '@nestjs/common';
-import { UserService } from 'src/app/application/users/services/user.service';
-import { CreateUserDto } from 'src/app/interfaces/dto/create-user.dto';
-import { UpdateUserDto } from 'src/app/interfaces/dto/update-user.dto';
-import { IUserRequest } from 'src/app/interfaces/jwt-payload/user-request.interface';
+import { UserService } from '../user.service';
+import { CreateUserDto } from '../dto/create-user.dto';
+import { UpdateUserDto } from '../dto/update-user.dto';
+import { IUserRequest } from 'src/common/auth/jwt-payload/user-request.interface';
 import { AuthGuard } from 'src/common/auth/guards/auth.guard';
 import { HashPasswordPipe } from 'src/common/pipes/hash-password.pipe';
 

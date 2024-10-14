@@ -1,5 +1,5 @@
 import { ConsoleLogger, Module } from '@nestjs/common';
-import { UserModule } from './app/application/users/modules/user.module';
+import { UserModule } from './app/users/user.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { CacheModule } from '@nestjs/cache-manager';
