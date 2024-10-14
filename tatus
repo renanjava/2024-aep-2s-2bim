@@ -1,0 +1,247 @@
+[33mcommit fd52bf95835562932472c16a44aaf09f646ea792[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeat/logging[m[33m)[m
+Author: Renan <renancvr777@gmail.com>
+Date:   Sun Oct 13 23:33:24 2024 -0300
+
+    add: global exception filter
+
+[33mcommit 4fb54412357e2121dd3f4155a1c38d279ddf85ea[m[33m ([m[1;31morigin/dev/renan[m[33m, [m[1;32mfix/redis-cache[m[33m)[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Sat Oct 12 23:55:50 2024 -0300
+
+    adicionando novos itens na todo-list
+
+[33mcommit 570a64296755de3293abfcc0df8b3b316ee1252e[m
+Merge: db1b045 a126f3a
+Author: Renan Geraldini Leão <131619149+renanjava@users.noreply.github.com>
+Date:   Sat Oct 12 23:23:07 2024 -0300
+
+    Merge pull request #15 from renanjava/fix/acessos-rotas
+    
+    fix: requests de acordo com o id no payload do jwt
+
+[33mcommit a126f3a68b559428c837ed927987b20c7f7b7e76[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Sat Oct 12 23:22:11 2024 -0300
+
+    fix: requests de acordo com o id no payload do jwt
+
+[33mcommit db1b0454ff99272ff076aaf564ba47c21c414865[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Sat Oct 12 22:56:00 2024 -0300
+
+    eslint all problems
+
+[33mcommit c84b7a6e119bf6b3f37399dff4dfb5f17b36f30f[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Sat Oct 12 22:52:59 2024 -0300
+
+    refatoração na auth module
+
+[33mcommit df353aafec986f88140c23aa07c59ec890c4739e[m
+Merge: fe67320 1230109
+Author: Renan Geraldini Leão <131619149+renanjava@users.noreply.github.com>
+Date:   Sat Oct 12 22:39:44 2024 -0300
+
+    Merge pull request #14 from renanjava/feat/login-register
+    
+    Feat/login register
+
+[33mcommit 1230109b8c0c71f4938d414da1e64188297e663b[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Sat Oct 12 22:37:58 2024 -0300
+
+    add: register para usuario
+
+[33mcommit 07826196a63d1b84db0e26daad98abe9462a650d[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Sat Oct 12 22:30:05 2024 -0300
+
+    add: autorização com jwt
+
+[33mcommit 905bf2a6dd7ea66de9f2a64ba02aeb500a470a1b[m
+Merge: 018dbc8 f682a28
+Author: Renan Geraldini Leão <131619149+renanjava@users.noreply.github.com>
+Date:   Sat Oct 12 20:33:44 2024 -0300
+
+    Merge pull request #13 from renanjava/fix/login-backend
+    
+    Fix/login backend
+
+[33mcommit f682a288fc130e747f7715bd72e41cec15d349e8[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Sat Oct 12 20:30:51 2024 -0300
+
+    fix: campos inválidos no body
+
+[33mcommit 534dbf4dda9f2b58ae916b36805bf1b4fa322b6e[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Sat Oct 12 20:23:43 2024 -0300
+
+    fix: geração do token
+
+[33mcommit 018dbc8e83fc8f50ef79cac56593ebb14f9f2d67[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Sat Oct 12 18:35:07 2024 -0300
+
+    add: jwt na autenticação
+
+[33mcommit e74be9bb3e01c78737ae70344b93674a78bf3646[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Sat Oct 12 17:50:39 2024 -0300
+
+    add: autenticação de usuário
+
+[33mcommit da5e43deaec7b01f334b91faceeed9c84f0be101[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Sat Oct 12 17:34:39 2024 -0300
+
+    refactor: password (utils e pipe)
+
+[33mcommit 6a017ec1e2ac219a07a4d33cc691a4092069d98d[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Sat Oct 12 16:09:43 2024 -0300
+
+    add: hash na senha com salt
+
+[33mcommit fe673207d9489f8779fe9444e6831f6ba7c75529[m
+Merge: 93fc8e6 913d037
+Author: Renan Geraldini Leão <131619149+renanjava@users.noreply.github.com>
+Date:   Fri Oct 11 21:15:09 2024 -0300
+
+    Merge pull request #12 from renanjava/fix/redis-cache
+    
+    fix: redis cache
+
+[33mcommit 913d037c739443a1f3bdc01329dd0e336e68f77f[m[33m ([m[1;31morigin/fix/redis-cache[m[33m)[m
+Author: Renan <renancvr777@gmail.com>
+Date:   Fri Oct 11 21:09:05 2024 -0300
+
+    fix: redis cache
+
+[33mcommit 93fc8e65210420ca5fd099fa3a1aaabe6a0f9cb5[m
+Merge: 5c818ee f1b9789
+Author: Renan Geraldini Leão <131619149+renanjava@users.noreply.github.com>
+Date:   Fri Oct 11 17:55:15 2024 -0300
+
+    Merge pull request #11 from renanjava/feature/cache-interceptor
+    
+    add: cache na versão 2 da controller de user
+
+[33mcommit f1b9789650b1ed3d028c0106415430765ff7bd4f[m[33m ([m[1;31morigin/feature/cache-interceptor[m[33m, [m[1;32mfeature/cache-interceptor[m[33m)[m
+Author: Renan <renancvr777@gmail.com>
+Date:   Fri Oct 11 17:53:51 2024 -0300
+
+    add: cache na versão 2 da controller de user
+
+[33mcommit 5c818ee71bf65863936e3040f04323efde1b9629[m
+Merge: 9826ea4 80f2e82
+Author: Renan Geraldini Leão <131619149+renanjava@users.noreply.github.com>
+Date:   Fri Oct 11 17:26:11 2024 -0300
+
+    Merge pull request #10 from renanjava/fix/user-dto
+    
+    fix: user dto
+
+[33mcommit 80f2e825753da520591ff3d5cc64dc792cd341a5[m[33m ([m[1;31morigin/fix/user-dto[m[33m, [m[1;32mfix/user-dto[m[33m)[m
+Author: Renan <renancvr777@gmail.com>
+Date:   Fri Oct 11 17:24:01 2024 -0300
+
+    fix: user dto
+
+[33mcommit 9826ea4bc7666aa19258a0c1fb2dc7e18693570c[m[33m ([m[1;32mdev/renan[m[33m)[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Thu Oct 10 19:50:43 2024 -0300
+
+    revertendo a parte de login e arrumando a arquitetura
+
+[33mcommit efa1f8b36c9d31d46ca3847c303a0bd4e715a477[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Wed Oct 9 22:24:16 2024 -0300
+
+    implementando login e dto
+
+[33mcommit 636dfa81b09706d6330afba4754fd200a08edb72[m
+Merge: b5019c3 0327812
+Author: Renan Geraldini Leão <131619149+renanjava@users.noreply.github.com>
+Date:   Wed Oct 9 15:44:29 2024 -0300
+
+    Merge pull request #9 from renanjava/fix/eslint
+    
+    fix: arquivos eslint/prettier e aplicando no src
+
+[33mcommit 0327812ab5642bdab4fa1653315617447e50db65[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Wed Oct 9 15:41:36 2024 -0300
+
+    fix: arquivos eslint/prettier e aplicando no src
+
+[33mcommit b5019c3470cd2731280057e948b00bcbac9b30b4[m
+Merge: 4e87ccc 0e5cd55
+Author: Renan Geraldini Leão <131619149+renanjava@users.noreply.github.com>
+Date:   Wed Oct 9 14:49:52 2024 -0300
+
+    Merge pull request #8 from renanjava/feature/versionamento-url
+    
+    add: versionamento de url
+
+[33mcommit 0e5cd557c95648fe07de649f89e4d153663b7705[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Wed Oct 9 14:46:18 2024 -0300
+
+    add: versionamento de url
+
+[33mcommit 4e87ccca1fde2602438dffa26a69474a60c5bf65[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Wed Oct 9 14:14:07 2024 -0300
+
+    atualizando a todo list
+
+[33mcommit d6d5ba651ecfacde462f2463bf40e3866e86361c[m
+Merge: 9d75e55 4215669
+Author: Renan Geraldini Leão <131619149+renanjava@users.noreply.github.com>
+Date:   Wed Oct 9 14:04:55 2024 -0300
+
+    Merge pull request #7 from renanjava/bugfix/build-docker
+    
+    fix: removendo a imagem estática do docker-compose
+
+[33mcommit 9d75e55ddb10434206dec45f2dca45671afcf7a8[m
+Merge: 79f2757 7fcbc4b
+Author: Renan Geraldini Leão <131619149+renanjava@users.noreply.github.com>
+Date:   Wed Oct 9 14:03:01 2024 -0300
+
+    Merge pull request #6 from renanjava/feature/swagger-framework
+    
+    add: swagger para os recursos de users
+
+[33mcommit 42156697cb89c0aa655437252beb01808bcca29f[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Wed Oct 9 14:01:19 2024 -0300
+
+    fix: removendo a imagem estática do docker-compose
+
+[33mcommit 7fcbc4b1ec6ce710973f02a631335f760265dc7b[m
+Author: renanjava <renancvr777@gmail.com>
+Date:   Wed Oct 9 13:58:12 2024 -0300
+
+    add: swagger para os recursos de users
+
+[33mcommit 79f27574d2fb1e06ab83abb061df32520d8cf1ca[m
+Merge: 3b63731 bd4380d
+Author: Renan Geraldini Leão <131619149+renanjava@users.noreply.github.com>
+Date:   Wed Oct 9 02:41:25 2024 -0300
+
+    Merge pull request #5 from renanjava/bugfix/url-mongo-docker
+    
+    fix: imagem docker e container com a url do banco no app module
+
+[33mcommit bd4380d4ae605a1ef551b4927db15ec93414c2b1[m[33m ([m[1;31morigin/bugfix/url-mongo-docker[m[33m)[m
+Author: Renan <renancvr777@gmail.com>
+Date:   Wed Oct 9 02:37:06 2024 -0300
+
+    fix: imagem docker e container com a url do banco no app module
+
+[33mcommit 3b637313564ea0cc60630bfa2f806fc5e6451506[m
+Merge: 5abe964 6162eb6
+Author: Renan Geraldini Leão <131619149+renanjava@users.noreply.github.com>
+Date:   Wed
