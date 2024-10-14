@@ -10,6 +10,7 @@ import {
   UseInterceptors,
   UseGuards,
   Req,
+  UseFilters,
 } from '@nestjs/common';
 import { UserService } from 'src/app/application/users/services/user.service';
 import { CreateUserDto } from 'src/app/interfaces/dto/create-user.dto';
