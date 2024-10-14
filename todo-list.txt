@@ -2,7 +2,7 @@
 [X] - Entender ataques de phishing
 [X] - Estudar técnicas de aprendizado de máquina aplicáveis à cibersegurança
 [X] - Hack tools
-[] - Cursos Alura
+[x] - Cursos Alura
 [] - Analisar aplicativos similares no mercado
 [X] - Elaborar um plano formal de gerenciamento de configuração
 [X] - Elaborar um plano formal para o app Flutter
@@ -10,20 +10,18 @@
 [] - Elaborar a documentação de manutenção (corretiva, adaptativa, perfectiva, preditiva)
 [X] - Configurar o ambiente Flutter
 [X] - Configurar o ambiente Nestjs
-[] - Definir a estrutura do projeto back-end e front-end
+[X] - Definir a estrutura do projeto back-end e front-end
 [x] - Repositório GitHub
-[] - Branches de Development
-[] - Criar imagens e containers Docker
-[] - Separar os requisitos funcionais
-    [] - CRUD usuário (Versionando a API)
-    [] - Identificar ataque de phishing
-    [] - Identificar ataque a força bruta
-    [] - Identificar ataque de dicionário
-    [] - Identificar ataque de rainbow table 
-    [] - Criar a interface do usuário (UI) do aplicativo
-    [] - Notificação pro usuário com base no user que o atacante tá tentando
-[] - Branches de Feature
-[] - Swagger
+[x] - Branches de Development
+[x] - Criar imagens e containers Docker
+[x] - Branches de Feature
+[x] - CRUD usuário (Versionando a API)
+[x] - Swagger
+[] - Regex no decorator Matches no atributo password user DTO
+[] - Utils para a ConfigService
+[] - Utils para o JwtService
+[x] - Filter
+[x] - Logging
 [] - Implementar a lógica de detecção de ameaças
 [] - Terminar o backend Nestjs
 [] - Terminar o app Flutter
@@ -33,3 +31,11 @@
 [] - Planejar testes
 [] - Executar testes
 [] - Refatoração
+
+[] - Separar os requisitos funcionais
+    [] - Identificar ataque de phishing
+    [] - Identificar ataque a força bruta
+    [] - Identificar ataque de dicionário
+    [] - Identificar ataque de rainbow table 
+    [] - Criar a interface do usuário (UI) do aplicativo
+    [] - Notificação pro usuário com base no user que o atacante tá tentando

@@ -4,6 +4,7 @@ import { UpdateEmailDto } from './dto/update-email.dto';
 
 @Injectable()
 export class EmailsService {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   create(createEmailDto: CreateEmailDto) {
     return 'This action adds a new email';
   }
@@ -16,6 +17,7 @@ export class EmailsService {
     return `This action returns a #${id} email`;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   update(id: number, updateEmailDto: UpdateEmailDto) {
     return `This action updates a #${id} email`;
   }
