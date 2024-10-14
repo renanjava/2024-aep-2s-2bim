@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { ConsoleLogger, Module } from '@nestjs/common';
 import { UserModule } from './app/application/users/modules/user.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
@@ -33,6 +33,7 @@ import { GlobalExceptionFilter } from './common/filters/global-exception.filter'
       provide: APP_FILTER,
       useClass: GlobalExceptionFilter,
     },
+    ConsoleLogger,
   ],
 })
 export class AppModule {}
