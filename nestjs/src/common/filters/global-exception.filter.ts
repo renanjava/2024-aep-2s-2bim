@@ -25,6 +25,9 @@ export class GlobalExceptionFilter implements ExceptionFilter {
     const response = context.getResponse();
     const request = context.getRequest();
 
+    if ('user' in request)
+      this.nativeLogger.log(`Rota acessada pelo usuário ${request.user.sub}`);
+
     const { status, body } =
       exception instanceof HttpException
         ? {
