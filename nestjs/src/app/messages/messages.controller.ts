@@ -6,23 +6,33 @@ import {
   Patch,
   Param,
   Delete,
+  Req,
+  UseGuards,
 } from '@nestjs/common';
 import { MessagesService } from './messages.service';
 import { CreateMessageDto } from './dto/create-message.dto';
 import { UpdateMessageDto } from './dto/update-message.dto';
+import { IUserRequest } from 'src/common/auth/jwt-payload/user-request.interface';
+import { AuthGuard } from 'src/common/auth/guards/auth.guard';
 
 @Controller('messages')
 export class MessagesController {
   constructor(private readonly messagesService: MessagesService) {}
 
   @Post()
-  create(@Body() createMessageDto: CreateMessageDto) {
-    return this.messagesService.create(createMessageDto);
+  async create(@Body() createMessageDto: CreateMessageDto) {
+    return await this.messagesService.create(createMessageDto);
+  }
+
+  @Get('teste')
+  async findAll() {
+    return this.messagesService.findAll();
   }
 
   @Get()
-  findAll() {
-    return this.messagesService.findAll();
+  @UseGuards(AuthGuard)
+  findByLoggedUser(@Req() request: IUserRequest) {
+    return this.messagesService.findByLoggerUser(request.user.sub);
   }
 
   @Get(':id')

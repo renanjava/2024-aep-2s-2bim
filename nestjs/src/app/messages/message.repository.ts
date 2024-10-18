@@ -14,4 +14,8 @@ export class MessageRepository {
   public async findAll(): Promise<MessageDocument[]> {
     return await this.messageModel.find();
   }
+
+  public async findByUserId(userId: string): Promise<MessageDocument[]> {
+    return await this.messageModel.find({ userId: userId });
+  }
 }

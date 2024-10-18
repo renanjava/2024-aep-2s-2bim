@@ -3,6 +3,7 @@ import { CreateMessageDto } from './dto/create-message.dto';
 import { UpdateMessageDto } from './dto/update-message.dto';
 import { MessageRepository } from './message.repository';
 import { MessageDocument } from './entities/message.entity';
+import { IUserRequest } from 'src/common/auth/jwt-payload/user-request.interface';
 
 @Injectable()
 export class MessagesService {
@@ -13,6 +14,10 @@ export class MessagesService {
 
   async findAll() {
     return await this.messageRepository.findAll();
+  }
+
+  async findByLoggerUser(userId: string) {
+    return await this.messageRepository.findByUserId(userId);
   }
 
   findOne(id: string) {
