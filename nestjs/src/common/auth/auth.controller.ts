@@ -1,22 +1,13 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-  UseFilters,
-} from '@nestjs/common';
-import { AuthService } from './auth.service';
+import { Controller, Post, Body } from '@nestjs/common';
 import { LoginAuthDto } from './dto/login-auth.dto';
+import { AuthLoginUseCase } from './usecases/auth-login.usecase';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor(private readonly authLoginUseCase: AuthLoginUseCase) {}
 
   @Post('login')
   login(@Body() loginAuthDto: LoginAuthDto) {
-    return this.authService.login(loginAuthDto);
+    return this.authLoginUseCase.execute(loginAuthDto);
   }
 }

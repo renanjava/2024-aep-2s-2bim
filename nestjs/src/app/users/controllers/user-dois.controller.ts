@@ -5,30 +5,36 @@ import {
   Post,
   Body,
   Patch,
-  Param,
   Delete,
   UseInterceptors,
   UseGuards,
   Req,
-  UseFilters,
 } from '@nestjs/common';
-import { UserService } from '../user.service';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { UpdateUserDto } from '../dto/update-user.dto';
 import { IUserRequest } from 'src/common/auth/jwt-payload/user-request.interface';
 import { AuthGuard } from 'src/common/auth/guards/auth.guard';
 import { HashPasswordPipe } from 'src/common/pipes/hash-password.pipe';
+import { UserCreateUseCase } from '../usecases/user-create.usecase';
+import { UserFindOneUseCase } from '../usecases/user-find-one.usecase';
+import { UserDeleteOneUseCase } from '../usecases/user-delete-one.usecase';
+import { UserUpdateOneUseCase } from '../usecases/user-update-one.usecase';
 
 @Controller({ path: 'users', version: '2' })
 export class UserControllerDois {
-  constructor(private readonly userService: UserService) {}
+  constructor(
+    private readonly userCreateUseCase: UserCreateUseCase,
+    private readonly userFindOneUseCase: UserFindOneUseCase,
+    private readonly userUpdateOneUseCase: UserUpdateOneUseCase,
+    private readonly userDeleteOneUseCase: UserDeleteOneUseCase,
+  ) {}
 
   @Post('register')
   async create(
     @Body() { password, ...createUserDto }: CreateUserDto,
     @Body('password', HashPasswordPipe) hashedPassword: string,
   ) {
-    return await this.userService.create({
+    return await this.userCreateUseCase.execute({
       ...createUserDto,
       password: hashedPassword,
     } as CreateUserDto);
@@ -38,7 +44,7 @@ export class UserControllerDois {
   @UseGuards(AuthGuard)
   @UseInterceptors(CacheInterceptor)
   async findOne(@Req() request: IUserRequest) {
-    return await this.userService.findOne(request.user.sub);
+    return await this.userFindOneUseCase.execute(request.user.sub);
   }
 
   @Patch()
@@ -47,12 +53,15 @@ export class UserControllerDois {
     @Req() request: IUserRequest,
     @Body() updateUserDto: UpdateUserDto,
   ) {
-    return await this.userService.update(request.user.sub, updateUserDto);
+    return await this.userUpdateOneUseCase.execute(
+      request.user.sub,
+      updateUserDto,
+    );
   }
 
   @Delete()
   @UseGuards(AuthGuard)
   async remove(@Req() request: IUserRequest) {
-    return await this.userService.remove(request.user.sub);
+    return await this.userDeleteOneUseCase.execute(request.user.sub);
   }
 }
