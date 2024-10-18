@@ -1,20 +1,23 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { LoginAuthDto } from './dto/login-auth.dto';
-import { UserService } from 'src/app/application/users/services/user.service';
 import { Password } from 'src/common/utils/password';
+import { IUserPayload } from '../jwt-payload/user-payload.interface';
 import { JwtService } from '@nestjs/jwt';
-import { IUserPayload } from 'src/app/interfaces/jwt-payload/user-payload.interface';
 import { ConfigService } from '@nestjs/config';
+import { LoginAuthDto } from '../dto/login-auth.dto';
+import { UserFindOneByEmailUseCase } from 'src/app/users/usecases/user-find-one-by-email.usecase';
 
 @Injectable()
-export class AuthService {
+export class AuthLoginUseCase {
   constructor(
-    private userService: UserService,
+    private userFindOneByEmailUseCase: UserFindOneByEmailUseCase,
     private jwtService: JwtService,
     private configService: ConfigService,
   ) {}
-  async login(loginAuthDto: LoginAuthDto) {
-    const user = await this.userService.findOneByEmail(loginAuthDto.email);
+
+  async execute(loginAuthDto: LoginAuthDto) {
+    const user = await this.userFindOneByEmailUseCase.execute(
+      loginAuthDto.email,
+    );
     const userAutenticado = await Password.verify(
       loginAuthDto.password,
       user.password,

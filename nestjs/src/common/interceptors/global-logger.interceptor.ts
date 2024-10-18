@@ -7,7 +7,7 @@ import {
 } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { Observable, tap } from 'rxjs';
-import { IUserRequest } from 'src/app/interfaces/jwt-payload/user-request.interface';
+import { IUserRequest } from '../auth/jwt-payload/user-request.interface';
 
 @Injectable()
 export class GlobalLoggerInterceptor implements NestInterceptor {
