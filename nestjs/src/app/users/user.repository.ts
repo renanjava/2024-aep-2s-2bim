@@ -3,23 +3,24 @@ import { InjectModel } from '@nestjs/mongoose';
 import { User, UserDocument } from './entities/user.entity';
 import { Model } from 'mongoose';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { IUserRepository } from './interfaces/user-repository.interface';
 
 @Injectable()
-export class UserRepository {
+export class UserRepository implements IUserRepository {
   constructor(
     @InjectModel(User.name) private readonly userModel: Model<User>,
   ) {}
 
   public async create(user: User): Promise<User> {
-    return this.userModel.create(user);
+    return await this.userModel.create(user);
   }
 
   public async findAll(): Promise<User[]> {
-    return this.userModel.find().select(['-password']);
+    return await this.userModel.find().select(['-password']);
   }
 
   public async findById(id: string): Promise<User | null> {
-    return this.userModel.findById(id).select(['-password']);
+    return await this.userModel.findById(id).select(['-password']);
   }
 
   public async updateById(id: string, updateUserDto: UpdateUserDto) {
@@ -27,8 +28,8 @@ export class UserRepository {
     return this.findById(id);
   }
 
-  public async deleteById(id: string) {
-    return await this.userModel.deleteOne({ _id: id });
+  public async deleteById(id: string): Promise<void> {
+    await this.userModel.deleteOne({ _id: id });
   }
 
   public async findOneByEmail(email: string): Promise<UserDocument> {

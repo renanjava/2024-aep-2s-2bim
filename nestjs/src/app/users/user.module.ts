@@ -22,6 +22,10 @@ import { UserFindOneByEmailUseCase } from './usecases/user-find-one-by-email.use
     UserUpdateOneUseCase,
     UserFindOneByEmailUseCase,
     UserRepository,
+    {
+      provide: 'IUserRepository',
+      useExisting: UserRepository,
+    },
   ],
   exports: [
     UserCreateUseCase,

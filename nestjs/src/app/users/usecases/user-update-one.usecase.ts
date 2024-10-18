@@ -1,12 +1,14 @@
-import { Injectable } from '@nestjs/common';
-import { UserRepository } from '../user.repository';
+import { Inject, Injectable } from '@nestjs/common';
 import { UpdateUserDto } from '../dto/update-user.dto';
+import { IUserRepository } from '../interfaces/user-repository.interface';
 
 @Injectable()
 export class UserUpdateOneUseCase {
-  constructor(protected readonly userRepository: UserRepository) {}
+  constructor(
+    @Inject('IUserRepository') private iUserRepository: IUserRepository,
+  ) {}
 
   async execute(id: string, updateUserDto: UpdateUserDto) {
-    return await this.userRepository.updateById(id, updateUserDto);
+    return await this.iUserRepository.updateById(id, updateUserDto);
   }
 }

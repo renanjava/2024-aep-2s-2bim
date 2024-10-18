@@ -1,11 +1,13 @@
-import { Injectable } from '@nestjs/common';
-import { UserRepository } from '../user.repository';
+import { Inject, Injectable } from '@nestjs/common';
+import { IUserRepository } from '../interfaces/user-repository.interface';
 
 @Injectable()
 export class UserFindAllUseCase {
-  constructor(protected readonly userRepository: UserRepository) {}
+  constructor(
+    @Inject('IUserRepository') private iUserRepository: IUserRepository,
+  ) {}
 
   async execute() {
-    return await this.userRepository.findAll();
+    return await this.iUserRepository.findAll();
   }
 }
