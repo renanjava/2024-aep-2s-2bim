@@ -13,9 +13,4 @@ export class CreateMessageDto {
   @IsNotEmpty()
   @IsUrl()
   url: string;
-
-  @IsString()
-  @IsMongoId()
-  @IsNotEmpty()
-  userId: string;
 }

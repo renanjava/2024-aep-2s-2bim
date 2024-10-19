@@ -3,13 +3,15 @@ import { CreateMessageDto } from './dto/create-message.dto';
 import { UpdateMessageDto } from './dto/update-message.dto';
 import { MessageRepository } from './message.repository';
 import { MessageDocument } from './entities/message.entity';
-import { IUserRequest } from 'src/common/auth/jwt-payload/user-request.interface';
 
 @Injectable()
 export class MessagesService {
   constructor(private messageRepository: MessageRepository) {}
-  async create(createMessageDto: CreateMessageDto) {
-    await this.messageRepository.create(createMessageDto as MessageDocument);
+  async create(createMessageDto: CreateMessageDto, userId: string) {
+    await this.messageRepository.create({
+      ...createMessageDto,
+      userId: userId,
+    } as MessageDocument);
   }
 
   async findAll() {

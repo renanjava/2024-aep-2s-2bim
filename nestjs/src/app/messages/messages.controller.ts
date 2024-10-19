@@ -20,8 +20,15 @@ export class MessagesController {
   constructor(private readonly messagesService: MessagesService) {}
 
   @Post()
-  async create(@Body() createMessageDto: CreateMessageDto) {
-    return await this.messagesService.create(createMessageDto);
+  @UseGuards(AuthGuard)
+  async create(
+    @Body() createMessageDto: CreateMessageDto,
+    @Req() request: IUserRequest,
+  ) {
+    return await this.messagesService.create(
+      createMessageDto,
+      request.user.sub,
+    );
   }
 
   @Get('teste')
