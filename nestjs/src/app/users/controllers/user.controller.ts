@@ -70,6 +70,6 @@ export class UserController {
   @Delete()
   @UseGuards(AuthGuard)
   async remove(@Req() request: IUserRequest) {
-    return await this.userDeleteOneUseCase.execute(request.user.sub);
+    await this.userDeleteOneUseCase.execute(request.user.sub);
   }
 }

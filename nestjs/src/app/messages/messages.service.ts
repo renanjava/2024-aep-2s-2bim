@@ -18,19 +18,17 @@ export class MessagesService {
     return await this.messageRepository.findAll();
   }
 
-  async findByLoggerUser(userId: string) {
-    return await this.messageRepository.findByUserId(userId);
+  async findById(userId: string, messageId: string) {}
+
+  async findAllByLoggerUser(userId: string) {
+    return await this.messageRepository.findAllByUserId(userId);
   }
 
-  findOne(id: string) {
-    return `This action returns a #${id} message`;
+  async update(id: string, updateMessageDto: UpdateMessageDto) {
+    return await this.messageRepository.updateById(id, updateMessageDto);
   }
 
-  update(id: string, updateMessageDto: UpdateMessageDto) {
-    return `This action updates a #${id} message`;
-  }
-
-  remove(id: string) {
-    return `This action removes a #${id} message`;
+  async remove(id: string) {
+    await this.messageRepository.deleteById(id);
   }
 }

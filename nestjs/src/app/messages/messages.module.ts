@@ -10,6 +10,13 @@ import { MessageRepository } from './message.repository';
     MongooseModule.forFeature([{ name: 'Message', schema: MessageSchema }]),
   ],
   controllers: [MessagesController],
-  providers: [MessagesService, MessageRepository],
+  providers: [
+    MessagesService,
+    MessageRepository,
+    {
+      provide: 'IMessageRepository',
+      useExisting: MessageRepository,
+    },
+  ],
 })
 export class MessagesModule {}

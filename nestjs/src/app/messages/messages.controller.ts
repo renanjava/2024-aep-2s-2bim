@@ -15,6 +15,7 @@ import { UpdateMessageDto } from './dto/update-message.dto';
 import { IUserRequest } from 'src/common/auth/jwt-payload/user-request.interface';
 import { AuthGuard } from 'src/common/auth/guards/auth.guard';
 
+@UseGuards(AuthGuard)
 @Controller('messages')
 export class MessagesController {
   constructor(private readonly messagesService: MessagesService) {}
@@ -37,23 +38,29 @@ export class MessagesController {
   }
 
   @Get()
-  @UseGuards(AuthGuard)
-  findByLoggedUser(@Req() request: IUserRequest) {
-    return this.messagesService.findByLoggerUser(request.user.sub);
+  async findAllByLoggedUser(@Req() request: IUserRequest) {
+    return await this.messagesService.findAllByLoggerUser(request.user.sub);
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.messagesService.findOne(id);
+  async findById(@Req() request: IUserRequest, @Param('id') id: string) {
+    return await this.messagesService.findById(request.user.sub, id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateMessageDto: UpdateMessageDto) {
-    return this.messagesService.update(id, updateMessageDto);
+  async update(
+    @Req() request: IUserRequest,
+    @Param('id') id: string,
+    @Body() updateMessageDto: UpdateMessageDto,
+  ) {
+    return await this.messagesService.update(
+      request.user.sub,
+      updateMessageDto,
+    );
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.messagesService.remove(id);
+  async remove(@Req() request: IUserRequest, @Param('id') id: string) {
+    await this.messagesService.remove(request.user.sub);
   }
 }
