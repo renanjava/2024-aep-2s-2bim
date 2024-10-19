@@ -1,6 +1,6 @@
 import { InjectModel } from '@nestjs/mongoose';
 import { Message, MessageDocument } from './entities/message.entity';
-import { Model } from 'mongoose';
+import { Model, Types } from 'mongoose';
 import { IMessageRepository } from 'src/common/interfaces/repositories/message-repository.interface';
 import { UpdateMessageDto } from './dto/update-message.dto';
 import { Injectable } from '@nestjs/common';
@@ -21,8 +21,8 @@ export class MessageRepository
     return await this.messageModel.find();
   }
 
-  public async findAllByUserId() {
-    return await this.messageModel.find();
+  public async findAllByUserId(userId: string): Promise<MessageDocument[]> {
+    return await this.messageModel.find({ userId: userId });
   }
 
   async findById(id: string): Promise<MessageDocument | null> {

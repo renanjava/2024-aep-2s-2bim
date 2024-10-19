@@ -24,8 +24,16 @@ export class MessagesService {
     return await this.messageRepository.findAllByUserId(userId);
   }
 
-  async update(id: string, updateMessageDto: UpdateMessageDto) {
-    return await this.messageRepository.updateById(id, updateMessageDto);
+  async update(
+    userId: string,
+    messageId: string,
+    updateMessageDto: UpdateMessageDto,
+  ) {
+    return await this.messageRepository.updateById(
+      userId,
+      messageId,
+      updateMessageDto,
+    );
   }
 
   async remove(id: string) {

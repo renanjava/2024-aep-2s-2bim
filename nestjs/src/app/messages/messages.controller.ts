@@ -55,6 +55,7 @@ export class MessagesController {
   ) {
     return await this.messagesService.update(
       request.user.sub,
+      id,
       updateMessageDto,
     );
   }
