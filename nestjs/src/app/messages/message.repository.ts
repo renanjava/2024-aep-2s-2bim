@@ -1,6 +1,6 @@
 import { InjectModel } from '@nestjs/mongoose';
 import { Message, MessageDocument } from './entities/message.entity';
-import { Model, Types } from 'mongoose';
+import { Model } from 'mongoose';
 import { IMessageRepository } from 'src/common/interfaces/repositories/message-repository.interface';
 import { UpdateMessageDto } from './dto/update-message.dto';
 import { Injectable } from '@nestjs/common';
@@ -25,8 +25,11 @@ export class MessageRepository
     return await this.messageModel.find({ userId: userId });
   }
 
-  async findById(id: string): Promise<MessageDocument | null> {
-    return await this.messageModel.findById(id);
+  async findById(
+    userId: string,
+    messageId: string,
+  ): Promise<MessageDocument | null> {
+    return await this.messageModel.findById({ _id: messageId, userId: userId });
   }
   async updateById(
     userId: string,
@@ -37,9 +40,9 @@ export class MessageRepository
       { _id: messageId, userId: userId },
       updateMessageDto,
     );
-    return this.findById(messageId);
+    return this.findById(userId, messageId);
   }
-  async deleteById(id: string): Promise<void> {
-    await this.messageModel.deleteOne({ _id: id });
+  async deleteById(userId: string, messageId: string): Promise<void> {
+    await this.messageModel.deleteOne({ _id: messageId, userId: userId });
   }
 }

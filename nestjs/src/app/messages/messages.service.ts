@@ -18,7 +18,9 @@ export class MessagesService {
     return await this.messageRepository.findAll();
   }
 
-  async findById(userId: string, messageId: string) {}
+  async findById(userId: string, messageId: string) {
+    return await this.messageRepository.findById(userId, messageId);
+  }
 
   async findAllByLoggerUser(userId: string) {
     return await this.messageRepository.findAllByUserId(userId);
@@ -36,7 +38,7 @@ export class MessagesService {
     );
   }
 
-  async remove(id: string) {
-    await this.messageRepository.deleteById(id);
+  async remove(messageId: string, userId: string) {
+    await this.messageRepository.deleteById(userId, messageId);
   }
 }

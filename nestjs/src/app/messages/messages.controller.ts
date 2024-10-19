@@ -21,7 +21,6 @@ export class MessagesController {
   constructor(private readonly messagesService: MessagesService) {}
 
   @Post()
-  @UseGuards(AuthGuard)
   async create(
     @Body() createMessageDto: CreateMessageDto,
     @Req() request: IUserRequest,
@@ -62,6 +61,6 @@ export class MessagesController {
 
   @Delete(':id')
   async remove(@Req() request: IUserRequest, @Param('id') id: string) {
-    await this.messagesService.remove(request.user.sub);
+    await this.messagesService.remove(id, request.user.sub);
   }
 }
