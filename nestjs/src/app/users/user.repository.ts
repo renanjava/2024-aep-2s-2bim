@@ -3,11 +3,11 @@ import { InjectModel } from '@nestjs/mongoose';
 import { User, UserDocument } from './entities/user.entity';
 import { Model } from 'mongoose';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { IRepository } from '../../common/generics/generic-repository.interface';
+import { IUserRepository } from 'src/common/interfaces/repositories/user-repository.interface';
 
 @Injectable()
 export class UserRepository
-  implements IRepository<UserDocument, UpdateUserDto>
+  implements IUserRepository<UserDocument, UpdateUserDto>
 {
   constructor(
     @InjectModel(User.name) private readonly userModel: Model<User>,
