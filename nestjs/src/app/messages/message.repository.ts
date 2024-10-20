@@ -29,7 +29,7 @@ export class MessageRepository
     userId: string,
     messageId: string,
   ): Promise<MessageDocument | null> {
-    return await this.messageModel.findById({ _id: messageId, userId: userId });
+    return await this.messageModel.findOne({ _id: messageId, userId: userId });
   }
   async updateById(
     userId: string,
