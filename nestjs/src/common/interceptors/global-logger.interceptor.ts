@@ -14,9 +14,9 @@ export class GlobalLoggerInterceptor implements NestInterceptor {
   constructor(private nativeLogger: ConsoleLogger) {}
 
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
-    const contextoHttp = context.switchToHttp();
-    const request = contextoHttp.getRequest<Request | IUserRequest>();
-    const response = contextoHttp.getResponse<Response>();
+    const httpContext = context.switchToHttp();
+    const request = httpContext.getRequest<Request | IUserRequest>();
+    const response = httpContext.getResponse<Response>();
 
     const { url, method } = request;
     const { statusCode } = response;

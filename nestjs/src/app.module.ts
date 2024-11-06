@@ -8,6 +8,7 @@ import { AuthModule } from './common/auth/auth.module';
 import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { GlobalExceptionFilter } from './common/filters/global-exception.filter';
 import { GlobalLoggerInterceptor } from './common/interceptors/global-logger.interceptor';
+import { MessageModule } from './app/messages/message.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { GlobalLoggerInterceptor } from './common/interceptors/global-logger.int
       },
       isGlobal: true,
     }),
+    MessageModule,
   ],
   controllers: [],
   providers: [

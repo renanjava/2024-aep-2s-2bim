@@ -19,11 +19,13 @@ import { UserCreateUseCase } from '../usecases/user-create.usecase';
 import { UserUpdateOneUseCase } from '../usecases/user-update-one.usecase';
 import { UserFindOneUseCase } from '../usecases/user-find-one.usecase';
 import { UserDeleteOneUseCase } from '../usecases/user-delete-one.usecase';
+import { UserFindAllUseCase } from '../usecases/user-find-all.usecase';
 
 @Controller({ path: 'users', version: '1' })
 export class UserController {
   constructor(
     private readonly userCreateUseCase: UserCreateUseCase,
+    private readonly userFindAllUseCase: UserFindAllUseCase,
     private readonly userFindOneUseCase: UserFindOneUseCase,
     private readonly userUpdateOneUseCase: UserUpdateOneUseCase,
     private readonly userDeleteOneUseCase: UserDeleteOneUseCase,
@@ -47,6 +49,12 @@ export class UserController {
     return await this.userFindOneUseCase.execute(request.user.sub);
   }
 
+  @Get('teste')
+  @UseInterceptors(CacheInterceptor)
+  async findAll() {
+    return await this.userFindAllUseCase.execute();
+  }
+
   @Patch()
   @UseGuards(AuthGuard)
   async update(
@@ -62,6 +70,6 @@ export class UserController {
   @Delete()
   @UseGuards(AuthGuard)
   async remove(@Req() request: IUserRequest) {
-    return await this.userDeleteOneUseCase.execute(request.user.sub);
+    await this.userDeleteOneUseCase.execute(request.user.sub);
   }
 }
