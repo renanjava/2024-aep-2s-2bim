@@ -18,13 +18,12 @@ describe('UserController', () => {
       { id: '1', name: 'User1' },
       { id: '2', name: 'User2' },
     ]),
-    // Adicione outros métodos conforme necessário
   };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [
-        CacheModule.register(), // Importando o CacheModule
+        CacheModule.register(), // Importa o CacheModule
       ],
       controllers: [UserController],
       providers: [
