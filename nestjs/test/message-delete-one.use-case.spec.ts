@@ -15,7 +15,7 @@ describe('MessageDeleteOneUseCase', () => {
         {
           provide: 'IMessageRepository',
           useValue: {
-            deleteById: jest.fn(),  // Mock do método deleteById
+            deleteById: jest.fn(),  
           },
         },
       ],
@@ -30,17 +30,17 @@ describe('MessageDeleteOneUseCase', () => {
   });
 
   it('should call deleteById on the repository with correct data', async () => {
-    const messageId = '12345';  // ID da mensagem
-    const userId = '54321';  // ID do usuário
+    const messageId = '12345';  
+    const userId = '54321';  
 
     const deleteSpy = jest.spyOn(messageRepository, 'deleteById');
 
-    // Executando o caso de uso
+  
     await useCase.execute(messageId, userId);
 
-    // Verificando se o método deleteById foi chamado corretamente
+  
     expect(deleteSpy).toHaveBeenCalledWith(userId, messageId);
-    expect(deleteSpy).toHaveBeenCalledTimes(1);  // Verificando que foi chamado uma vez
+    expect(deleteSpy).toHaveBeenCalledTimes(1);  
   });
 
   it('should throw an error if deleteById fails', async () => {
@@ -48,7 +48,7 @@ describe('MessageDeleteOneUseCase', () => {
     const userId = '54321';
     const error = new Error('Error deleting message');
     
-    // Simulando um erro no repositório
+    
     jest.spyOn(messageRepository, 'deleteById').mockRejectedValue(error);
 
     await expect(useCase.execute(messageId, userId)).rejects.toThrow(error);

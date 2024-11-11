@@ -15,7 +15,7 @@ describe('MessageUpdateOneUseCase', () => {
         {
           provide: 'IMessageRepository',
           useValue: {
-            updateById: jest.fn(),  // Mock do método updateById
+            updateById: jest.fn(),  
           },
         },
       ],
@@ -30,8 +30,8 @@ describe('MessageUpdateOneUseCase', () => {
   });
 
   it('should call updateById on the repository with correct data', async () => {
-    const userId = '67890';  // ID do usuário
-    const messageId = '12345'; // ID da mensagem
+    const userId = '67890'; 
+    const messageId = '12345'; 
     const updateMessageDto: UpdateMessageDto = {
       title: 'Updated Title',
       description: 'Updated description.',
@@ -40,12 +40,12 @@ describe('MessageUpdateOneUseCase', () => {
 
     const updateSpy = jest.spyOn(messageRepository, 'updateById');
 
-    // Executando o caso de uso
+    
     await useCase.execute(userId, messageId, updateMessageDto);
 
-    // Verificando se o método updateById foi chamado corretamente
+
     expect(updateSpy).toHaveBeenCalledWith(userId, messageId, updateMessageDto);
-    expect(updateSpy).toHaveBeenCalledTimes(1);  // Verificando que foi chamado uma vez
+    expect(updateSpy).toHaveBeenCalledTimes(1);  
   });
 
   it('should throw an error if updateById fails', async () => {
@@ -59,7 +59,7 @@ describe('MessageUpdateOneUseCase', () => {
 
     const error = new Error('Error updating message');
     
-    // Simulando um erro no repositório
+   
     jest.spyOn(messageRepository, 'updateById').mockRejectedValue(error);
 
     await expect(useCase.execute(userId, messageId, updateMessageDto)).rejects.toThrow(error);

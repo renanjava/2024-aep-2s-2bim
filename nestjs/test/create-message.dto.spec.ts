@@ -16,7 +16,7 @@ describe('MessageCreateUseCase', () => {
         {
           provide: 'IMessageRepository',
           useValue: {
-            create: jest.fn(),  // Mock do método create
+            create: jest.fn(),  
           },
         },
       ],
@@ -37,20 +37,20 @@ describe('MessageCreateUseCase', () => {
       url: 'https://www.example.com',
     };
 
-    const userId = '12345';  // ID do usuário
+    const userId = '12345';  
 
-    // Mock da criação (não deve retornar nada, apenas simula a ação)
+    
     const createSpy = jest.spyOn(messageRepository, 'create');
 
-    // Executando o caso de uso
+   
     await useCase.execute(createMessageDto, userId);
 
-    // Verificando se o método create foi chamado corretamente
+    
     expect(createSpy).toHaveBeenCalledWith({
       ...createMessageDto,
       userId,
     });
-    expect(createSpy).toHaveBeenCalledTimes(1);  // Verificando que foi chamado uma vez
+    expect(createSpy).toHaveBeenCalledTimes(1);  
   });
 
   it('should throw an error if create fails', async () => {
@@ -63,7 +63,7 @@ describe('MessageCreateUseCase', () => {
     const userId = '12345';
     const error = new Error('Error creating message');
     
-    // Simulando um erro no repositório
+    
     jest.spyOn(messageRepository, 'create').mockRejectedValue(error);
 
     await expect(useCase.execute(createMessageDto, userId)).rejects.toThrow(error);
