@@ -18,13 +18,12 @@ describe('UserController', () => {
       { id: '1', name: 'User1' },
       { id: '2', name: 'User2' },
     ]),
-    // Adicione outros métodos conforme necessário
   };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [
-        CacheModule.register(), // Importando o CacheModule
+        CacheModule.register(), 
       ],
       controllers: [UserController],
       providers: [
@@ -36,8 +35,8 @@ describe('UserController', () => {
         UserDeleteOneUseCase,
         UserUpdateOneUseCase,
         {
-          provide: 'IUserRepository', // Injetando a interface do repositório
-          useValue: mockUserRepository, // Usando o mock do repositório
+          provide: 'IUserRepository', 
+          useValue: mockUserRepository, 
         },
       ],
     }).compile();
